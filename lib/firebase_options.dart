@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -57,6 +54,15 @@ class DefaultFirebaseOptions {
     appId: '1:136512477708:android:30d57a0c8f08a96370ec29',
     messagingSenderId: '136512477708',
     projectId: 'taskflow-case-study',
+    storageBucket: 'taskflow-case-study.firebasestorage.app',
+  );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDRheX0gmaD8VS4I3SZk46IVg-JDWIkdjI',
+    appId: '1:136512477708:web:6a37a4ac33b030d370ec29',
+    messagingSenderId: '136512477708',
+    projectId: 'taskflow-case-study',
+    authDomain: 'taskflow-case-study.firebaseapp.com',
     storageBucket: 'taskflow-case-study.firebasestorage.app',
   );
 
